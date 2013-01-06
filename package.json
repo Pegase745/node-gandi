@@ -1,0 +1,16 @@
+{
+  "name": "node-gandi",
+  "version": "1.0.0",
+  "description": "Node.js client for Gandi.net XML-RPC API, written in CoffeeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Michel Nemnom",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "~1.4.0",
+    "xmlrpc": "~1.1.0"
+  }
+}
