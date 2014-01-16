@@ -57,3 +57,7 @@ Dependencies
 * Gandi API ~3.2.3
 * Coffee-Script ~1.4.0
 * xmlrpc ~1.1.0
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Pegase745/node-gandi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
