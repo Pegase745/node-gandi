@@ -3,6 +3,8 @@ node-gandi
 
 ### [Node.js](http://nodejs.org/) client for Gandi.net XML-RPC [API](http://doc.rpc.gandi.net/), written in [CoffeeScript](http://coffeescript.org/).
 
+[![NPM module](https://img.shields.io/npm/v/node-gandi.png)](https://www.npmjs.org/package/node-gandi)
+[![Gittip](https://img.shields.io/gittip/Pegase745.svg)](https://www.gittip.com/Pegase745/)
 Usage
 -----
 
