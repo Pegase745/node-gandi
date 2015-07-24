@@ -3,9 +3,6 @@
   "version": "2.0.0",
   "description": "Node.js client for Gandi.net XML-RPC API.",
   "main": "./src/gandi.js",
-  "directories": {
-    "example": "examples"
-  },
   "scripts": {
     "lint": "jshint src && jscs src",
     "test": "nodeunit tests tests/unit"
