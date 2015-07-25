@@ -3,7 +3,8 @@ node-gandi
 
 ### [Node.js](http://nodejs.org/) client for Gandi.net XML-RPC [API](http://doc.rpc.gandi.net/), written in [CoffeeScript](http://coffeescript.org/).
 
-[![NPM module](https://img.shields.io/npm/v/node-gandi.png)](https://www.npmjs.org/package/node-gandi)
+[![NPM module](https://img.shields.io/npm/v/node-gandi.png?style=flat-square)](https://www.npmjs.org/package/node-gandi)
+[![Build Status](https://img.shields.io/travis/Pegase745/node-gandi.svg?style=flat-square)](https://travis-ci.org/Pegase745/node-gandi)
 [![Gittip](https://img.shields.io/gittip/Pegase745.svg)](https://www.gittip.com/Pegase745/)
 Usage
 -----
@@ -59,7 +60,3 @@ Dependencies
 * Gandi API ~3.2.3
 * Coffee-Script ~1.4.0
 * xmlrpc ~1.1.0
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Pegase745/node-gandi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
