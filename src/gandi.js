@@ -51,11 +51,11 @@ var Gandi = function(apikey, is_ote) {
 };
 
 Gandi.prototype.call = function(method, params, callback) {
-    if (!params) params = [];
+    if (!params) {params = [];}
     params.unshift(this.apikey);
-    this.client.methodCall(method, params, function (error, value) {
+    this.client.methodCall(method, params, function(error, value) {
         if (error) {
-          console.log(error);
+            console.log(error);
         }
         callback(value);
     });
