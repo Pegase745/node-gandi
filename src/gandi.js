@@ -14,6 +14,12 @@ var config_ote = {
     path: '/xmlrpc/'
 };
 
+/**
+ * Returns apikey to constructor after some validation.
+ *
+ * @param {string} apikey - Apikey passed onto the constructor.
+ * @private
+ */
 function defaultApikey(apikey) {
     if (typeof apikey !== 'undefined') {
         if (typeof apikey !== 'string') {
@@ -29,6 +35,12 @@ function defaultApikey(apikey) {
     throw new TypeError('Gandi client needs an apikey as a first argument');
 }
 
+/**
+ * Returns config to constructor whether OT&E is used or wether or not.
+ *
+ * @param {boolean} is_ote - Use OT&E environment or not.
+ * @private
+ */
 function defaultConfig(is_ote) {
     if (typeof is_ote !== 'undefined') {
         if (typeof is_ote !== 'boolean') {
@@ -44,6 +56,18 @@ function defaultConfig(is_ote) {
     }
 }
 
+/**
+ * Creates a new Gandi client.
+ * @example
+ * var cli = require('node-gandi');
+ * var apikey = 'your-24-char-apikey';
+ *
+ * gandi = new cli(apikey, true);
+ *
+ * @class
+ * @param {string} apikey - Apikey to be used for calls.
+ * @param {boolean} [is_ote=false] - Use OT&E environment or not.
+ */
 var Gandi = function(apikey, is_ote) {
     this.apikey = defaultApikey(apikey);
     this.config = defaultConfig(is_ote);
@@ -59,12 +83,28 @@ var Gandi = function(apikey, is_ote) {
  */
 
 /**
- * Calls an API method with given parameters and return a result
- * @method call
+ * Calls an API method with given parameters and returns a result
+ * @example
+ * var domain = 'pegase745.org';
+ *
+ *  var cb = function(err, data) {
+ *    if (data[domain] == 'pending') {
+ *      console.log('result is not yet ready')
+ *      setTimeout(function() {
+ *        gandi.call('domain.available', [[domain]], cb);
+ *      }, 700)
+ *    }
+ *    else {
+ *      console.dir(data);
+ *    }
+ *  }
+ *
+ *  gandi.call('domain.available', [[domain]], cb);
+ *
  * @param {string} method - API method to call.
  * @param {array} params - Parameters given to method.
  * @param {requestCallback} callback - The callback that handles the response.
- * @return
+ * @returns
  */
 Gandi.prototype.call = function(method, params, callback) {
     if (!params) {params = [];}
@@ -76,9 +116,14 @@ Gandi.prototype.call = function(method, params, callback) {
 
 /**
  * Lists API available methods
- * @method list
+ * @example
+ * gandi.list(function(err, data) {
+ *   if (err) throw err;
+ *   console.log(data);
+ * });
+ *
  * @param {requestCallback} callback - The callback that handles the response.
- * @return {Array}
+ * @returns {Array}
  */
 Gandi.prototype.list = function(callback) {
     this.client.methodCall('system.listMethods', [], function(error, value) {
@@ -88,10 +133,15 @@ Gandi.prototype.list = function(callback) {
 
 /**
  * Lists signature for given method
- * @method signature
+ * @example
+ * gandi.signature('domain.list', function(err, data) {
+ *   if (err) throw err;
+ *   console.log(data);
+ * });
+ *
  * @param {string} method - API method wanted.
  * @param {requestCallback} callback - The callback that handles the response.
- * @return {Array}
+ * @returns {Array}
  */
 Gandi.prototype.signature = function(method, callback) {
     this.client.methodCall('system.methodSignature', [method], function(error, value) {
@@ -101,10 +151,15 @@ Gandi.prototype.signature = function(method, callback) {
 
 /**
  * Lists help for given method
- * @method help
+ * @example
+ * gandi.help('domain.list', function(err, data) {
+ *   if (err) throw err;
+ *   console.log(data);
+ * });
+ *
  * @param {string} method - API method wanted.
  * @param {requestCallback} callback - The callback that handles the response.
- * @return {Array}
+ * @returns {Array}
  */
 Gandi.prototype.help = function(method, callback) {
     this.client.methodCall('system.methodHelp', [method], function(error, value) {
