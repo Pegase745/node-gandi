@@ -1,23 +1,35 @@
 {
   "name": "node-gandi",
-  "version": "1.0.0",
-  "description": "Node.js client for Gandi.net XML-RPC API, written in CoffeeScript",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Node.js client for Gandi.net XML-RPC API.",
+  "main": "./src/gandi.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "jshint src && jscs src",
+    "test": "mocha tests --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pegase745/node-gandi.git"
+    "url": "git+https://github.com/Pegase745/node-gandi.git"
   },
   "keywords": [
-    "client",
-    "gandi"
+    "gandi",
+    "xmlrpc",
+    "api",
+    "client"
   ],
   "author": "Michel Nemnom",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pegase745/node-gandi/issues"
+  },
+  "homepage": "https://github.com/Pegase745/node-gandi#readme",
+  "devDependencies": {
+    "jscs": "1.13.x",
+    "jshint": "2.8.x",
+    "lodash": "3.10.x",
+    "mocha": "2.2.x"
+  },
   "dependencies": {
-    "coffee-script": "~1.4.0",
-    "xmlrpc": "~1.1.0"
+    "xmlrpc": "1.3.x"
   }
 }
