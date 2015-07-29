@@ -54,10 +54,7 @@ Gandi.prototype.call = function(method, params, callback) {
     if (!params) {params = [];}
     params.unshift(this.apikey);
     this.client.methodCall(method, params, function(error, value) {
-        if (error) {
-            console.log(error);
-        }
-        callback(value);
+        callback(error, value);
     });
 };
 
