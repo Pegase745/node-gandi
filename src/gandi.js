@@ -58,4 +58,22 @@ Gandi.prototype.call = function(method, params, callback) {
     });
 };
 
+Gandi.prototype.list = function(callback) {
+    this.client.methodCall('system.listMethods', [], function(error, value) {
+        callback(error, value);
+    });
+};
+
+Gandi.prototype.signature = function(method, callback) {
+    this.client.methodCall('system.methodSignature', [method], function(error, value) {
+        callback(error, value);
+    });
+};
+
+Gandi.prototype.help = function(method, callback) {
+    this.client.methodCall('system.methodHelp', [method], function(error, value) {
+        callback(error, value);
+    });
+};
+
 module.exports = Gandi;

@@ -139,4 +139,25 @@ describe('Gandi OT&E query', function () {
             done();
         });
     });
+
+    it('should be ok when listing API available methods', function(done) {
+        gandi.list(function(err, data) {
+            assert.notEqual(data.length, 0);
+            done();
+        });
+    });
+
+    it('should be ok when asking for API method signature', function(done) {
+        gandi.signature('domain.list', function(err, data) {
+            assert.notEqual(typeof data, 'undefined');
+            done();
+        });
+    });
+
+    it('should be ok when asking for API method help', function(done) {
+        gandi.help('domain.list', function(err, data) {
+            assert.notEqual(typeof data, 'undefined');
+            done();
+        });
+    });
 });
