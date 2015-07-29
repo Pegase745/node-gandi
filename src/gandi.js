@@ -50,6 +50,22 @@ var Gandi = function(apikey, is_ote) {
     this.client = xmlrpc.createSecureClient(this.config);
 };
 
+/**
+ * This callback type is called `requestCallback` and is displayed as a global symbol.
+ *
+ * @callback requestCallback
+ * @param {string} err
+ * @param {Object|Array} value
+ */
+
+/**
+ * Calls an API method with given parameters and return a result
+ * @method call
+ * @param {string} method - API method to call.
+ * @param {array} params - Parameters given to method.
+ * @param {requestCallback} callback - The callback that handles the response.
+ * @return
+ */
 Gandi.prototype.call = function(method, params, callback) {
     if (!params) {params = [];}
     params.unshift(this.apikey);
@@ -58,18 +74,38 @@ Gandi.prototype.call = function(method, params, callback) {
     });
 };
 
+/**
+ * Lists API available methods
+ * @method list
+ * @param {requestCallback} callback - The callback that handles the response.
+ * @return {Array}
+ */
 Gandi.prototype.list = function(callback) {
     this.client.methodCall('system.listMethods', [], function(error, value) {
         callback(error, value);
     });
 };
 
+/**
+ * Lists signature for given method
+ * @method signature
+ * @param {string} method - API method wanted.
+ * @param {requestCallback} callback - The callback that handles the response.
+ * @return {Array}
+ */
 Gandi.prototype.signature = function(method, callback) {
     this.client.methodCall('system.methodSignature', [method], function(error, value) {
         callback(error, value);
     });
 };
 
+/**
+ * Lists help for given method
+ * @method help
+ * @param {string} method - API method wanted.
+ * @param {requestCallback} callback - The callback that handles the response.
+ * @return {Array}
+ */
 Gandi.prototype.help = function(method, callback) {
     this.client.methodCall('system.methodHelp', [method], function(error, value) {
         callback(error, value);
