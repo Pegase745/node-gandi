@@ -40,7 +40,7 @@ var config_ote = {
     method: 'POST'
 };
 
-var apikey = 'GJL7RR88hRMRrIRz3R5grAfB';
+var apikey = process.env.ote_apikey;
 
 
 /**
