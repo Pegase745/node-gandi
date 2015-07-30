@@ -1,6 +1,6 @@
 # node-gandi
 
-[![NPM module](https://img.shields.io/npm/v/node-gandi.png?style=flat-square)](https://www.npmjs.org/package/node-gandi) [![Build Status](https://img.shields.io/travis/Pegase745/node-gandi.svg?style=flat-square)](https://travis-ci.org/Pegase745/node-gandi) [![Dependencies](https://img.shields.io/david/pegase745/node-gandi.svg?style=flat-square)](https://david-dm.org/pegase745/node-gandi) [![Inline docs](http://inch-ci.org/github/pegase745/node-gandi.svg?branch=master&style=flat-square)](http://inch-ci.org/github/pegase745/node-gandi)
+[![npm version](https://badge.fury.io/js/node-gandi.svg)](http://badge.fury.io/js/node-gandi) [![Build Status](https://travis-ci.org/Pegase745/node-gandi.svg?branch=master)](https://travis-ci.org/Pegase745/node-gandi) [![Dependency Status](https://david-dm.org/pegase745/node-gandi.svg)](https://david-dm.org/pegase745/node-gandi) [![Inline docs](http://inch-ci.org/github/pegase745/node-gandi.svg?branch=master&style=flat-square)](http://inch-ci.org/github/pegase745/node-gandi)
 
 [![NPM](https://nodei.co/npm/node-gandi.png?downloads=true&downloadRank=true)](https://nodei.co/npm/node-gandi/)
 
